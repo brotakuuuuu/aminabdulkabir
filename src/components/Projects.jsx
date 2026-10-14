@@ -1,31 +1,31 @@
 import { PROJECTS } from '../data.js'
-import { Arrow, SectionHeading } from './ui.jsx'
+import { Arrow, SectionHeading, SocialIcon } from './ui.jsx'
 
 function ProjectCard({ project, index }) {
   const { name, image, description, tools, live, code } = project
   return (
-    <article className="reveal group flex flex-col">
+    <article className="flex flex-col">
       <a
         href={live}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative block aspect-[16/10] overflow-hidden rounded-2xl border border-line bg-ink-2"
+        className="block aspect-[16/10] overflow-hidden rounded-2xl border border-line bg-ink-2"
       >
         {image ? (
           <img
             src={image}
             alt={`${name} screenshot`}
             loading="lazy"
-            className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
+            decoding="async"
+            width="1200"
+            height="750"
+            className="h-full w-full object-cover object-top"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center font-mono text-xs uppercase tracking-widest text-mute">
             Image coming soon
           </div>
         )}
-        <span className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-accent text-ink opacity-0 transition-all duration-300 group-hover:opacity-100">
-          <Arrow />
-        </span>
       </a>
 
       <div className="mt-6 flex items-baseline gap-4">
@@ -43,12 +43,12 @@ function ProjectCard({ project, index }) {
       </ul>
 
       <div className="mt-6 flex gap-6 text-sm font-semibold">
-        <a href={live} target="_blank" rel="noopener noreferrer" className="group/l inline-flex items-center gap-1.5 border-b border-accent pb-0.5 text-accent">
+        <a href={live} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 border-b border-accent pb-0.5 text-accent">
           Live <Arrow />
         </a>
         {code && (
           <a href={code} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 border-b border-line pb-0.5 transition-colors hover:border-paper">
-            <i className="devicon-github-original" /> Code
+            <SocialIcon icon="/icons/github-original.svg" className="h-3.5 w-3.5" /> Code
           </a>
         )}
       </div>

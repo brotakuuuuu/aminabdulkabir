@@ -28,12 +28,12 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="grain relative border-t border-line bg-ink-2/40">
+    <section id="contact" className="border-t border-line bg-ink-2/40">
       <div className="mx-auto max-w-6xl px-6 py-28 md:py-40">
         <SectionHeading index="04" label="Contact" title={<>Contact <em className="text-mute">me</em></>} />
 
         <div className="grid gap-16 md:grid-cols-[1fr_1.2fr]">
-          <div className="reveal">
+          <div>
             <p className="font-display text-4xl leading-tight md:text-5xl">
               Have an idea? <em className="text-accent">Let's build it.</em>
             </p>
@@ -45,7 +45,7 @@ export default function Contact() {
             </a>
           </div>
 
-          <form onSubmit={onSubmit} className="reveal flex flex-col gap-8">
+          <form onSubmit={onSubmit} className="flex flex-col gap-8">
             <div className="relative">
               <input id="name" name="name" value={form.name} onChange={onChange} placeholder="Name" required className={field} />
               <label htmlFor="name" className={label}>Name</label>
@@ -63,7 +63,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="group inline-flex h-14 items-center gap-2 rounded-full bg-accent px-8 font-semibold text-ink transition-all hover:-translate-y-0.5 disabled:opacity-60"
+                className="inline-flex h-14 items-center gap-2 rounded-full bg-accent px-8 font-semibold text-ink transition-colors hover:bg-paper disabled:opacity-60"
               >
                 {status === 'sending' ? 'Sending…' : 'Send Message'} <Arrow />
               </button>

@@ -7,12 +7,12 @@ export default function About() {
       <SectionHeading index="01" label="About" title={<>About <em className="text-mute">me</em></>} />
 
       <div className="grid gap-12 md:grid-cols-[1fr_1.4fr] md:gap-20">
-        <p className="reveal font-display text-3xl leading-tight md:text-4xl">
+        <p className="font-display text-3xl leading-tight md:text-4xl">
           A devoted full-stack developer with a passion for crafting{' '}
           <em className="text-accent">scalable, user-centric</em> solutions.
         </p>
 
-        <div className="reveal space-y-6 text-lg leading-relaxed text-mute">
+        <div className="space-y-6 text-lg leading-relaxed text-mute">
           <p>
             My name is <span className="text-paper">Amin Abdulkabir</span>, and I am a devoted full-stack developer with
             a passion for crafting scalable, user-centric solutions. With years of experience in the industry, I've honed

@@ -19,8 +19,8 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
       <nav
-        className={`mx-auto flex max-w-6xl items-center justify-between rounded-full border px-5 py-3 transition-all duration-500 ${
-          scrolled ? 'border-line bg-ink/75 backdrop-blur-xl' : 'border-transparent'
+        className={`mx-auto flex max-w-6xl items-center justify-between rounded-full border px-5 py-3 ${
+          scrolled ? 'border-line bg-ink' : 'border-transparent'
         }`}
       >
         <a href="#home" className="font-display text-2xl italic">
@@ -46,15 +46,13 @@ export default function Nav() {
           aria-label="Toggle menu"
           aria-expanded={open}
         >
-          <span className={`h-px w-6 bg-paper transition-transform ${open ? 'translate-y-[3.5px] rotate-45' : ''}`} />
-          <span className={`h-px w-6 bg-paper transition-transform ${open ? '-translate-y-[3.5px] -rotate-45' : ''}`} />
+          <span className={`h-px w-6 bg-paper ${open ? 'translate-y-[3.5px] rotate-45' : ''}`} />
+          <span className={`h-px w-6 bg-paper ${open ? '-translate-y-[3.5px] -rotate-45' : ''}`} />
         </button>
       </nav>
 
       <div
-        className={`fixed inset-0 z-40 flex flex-col justify-center bg-ink px-8 transition-opacity duration-300 md:hidden ${
-          open ? 'opacity-100' : 'pointer-events-none opacity-0'
-        }`}
+        className={`fixed inset-0 z-40 flex-col justify-center bg-ink px-8 md:hidden ${open ? 'flex' : 'hidden'}`}
       >
         <ul className="flex flex-col gap-4">
           {NAV.map((n, i) => (
